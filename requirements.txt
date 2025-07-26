@@ -7,3 +7,4 @@ plotly==5.22.0
 langchain-groq==0.1.9
 langgraph==0.2.14
 langchain-core==0.2.34
+scipy==1.10.1
