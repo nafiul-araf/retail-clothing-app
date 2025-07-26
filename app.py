@@ -100,18 +100,18 @@ def handle_default_query(query: str) -> tuple[str, bool]:
         return "Thank you for reaching out! Have a great day!", False
     return None, False
 
-# llm = ChatGroq(
-#     temperature=0,
-#     groq_api_key=os.getenv("GROQ_API_KEY"),
-#     model_name="llama-3.3-70b-versatile"
-# )
-
-
 llm = ChatGroq(
     temperature=0,
-    groq_api_key=st.secrets["GROQ_API_KEY"],
+    groq_api_key=os.getenv("GROQ_API_KEY"),
     model_name="llama-3.3-70b-versatile"
 )
+
+
+# llm = ChatGroq(
+#     temperature=0,
+#     groq_api_key=st.secrets["GROQ_API_KEY"],
+#     model_name="llama-3.3-70b-versatile"
+# )
 
 def categorize(state: State) -> State:
     default_response, needs_escalation = handle_default_query(state["query"])
